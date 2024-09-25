@@ -1,4 +1,5 @@
 using InventoryManagementAPI.Data;
+using InventoryManagementAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<InventoryContext>(options =>
     options.UseInMemoryDatabase("InventoryDB"));
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
