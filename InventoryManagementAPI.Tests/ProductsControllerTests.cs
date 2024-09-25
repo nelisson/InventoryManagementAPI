@@ -25,10 +25,10 @@ namespace InventoryManagementAPI.Tests
         {
             // Arrange
             var products = new List<Product>
-        {
-            new Product { Id = 1, Name = "Product A", Price = 10.0m, Stock = 100 },
-            new Product { Id = 2, Name = "Product B", Price = 20.0m, Stock = 200 }
-        };
+            {
+                new Product { Id = 1, Name = "Product A", Price = 10.0m, Stock = 100 },
+                new Product { Id = 2, Name = "Product B", Price = 20.0m, Stock = 200 }
+            };
             _mockRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(products);
 
             // Act
