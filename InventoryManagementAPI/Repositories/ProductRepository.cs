@@ -24,7 +24,8 @@ namespace InventoryManagementAPI.Repositories
 
         public async Task UpdateAsync(Product product)
         {
-            context.Entry(product).State = EntityState.Modified;
+            product.UpdatedAt = DateTime.UtcNow;
+            context.Products.Update(product);
             try
             {
                 await context.SaveChangesAsync();
@@ -60,7 +61,7 @@ namespace InventoryManagementAPI.Repositories
             var product = await context.Products.FindAsync(id);
             if (product != null)
             {
-                product.Stock -= quantity;
+                product.Stock = Math.Max(product.Stock - quantity, 0);
                 await context.SaveChangesAsync();
             }
         }

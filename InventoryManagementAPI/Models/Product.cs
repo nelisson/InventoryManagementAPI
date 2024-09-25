@@ -15,7 +15,7 @@ namespace InventoryManagementAPI.Models
         [Range(0, int.MaxValue)]
         public int Stock { get; set; }
 
-        [Timestamp]
-        public byte[]? RowVersion { get; set; }
+        [ConcurrencyCheck]
+        public DateTime UpdatedAt { get; set; }
     }
 }

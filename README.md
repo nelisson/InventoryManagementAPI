@@ -9,7 +9,7 @@ The **Inventory Management API** is a RESTful web service developed using .NET 8
 - **Product Management**: Create, retrieve, update, and delete products.
 - **Inventory Management**: Add or remove stock for products.
 - **API Documentation**: Integrated Swagger UI for easy testing and exploration of the API.
-- **In-Memory Database**: Uses an in-memory database for simplicity and ease of setup.
+- **SQLite Database**: Uses an SQLite database for simplicity and ease of setup.
 - **SOLID Principles**: The codebase adheres to SOLID principles and uses design patterns like Repository Pattern and Dependency Injection.
 - **Unit Testing**: Includes unit tests for business logic using xUnit and code coverage analysis with Coverlet.
 
@@ -71,7 +71,7 @@ The **Inventory Management API** is a RESTful web service developed using .NET 8
 2. **Run Tests with Code Coverage**
 
    ```bash
-   dotnet test --settings coverlet.runsettings
+   dotnet test --settings coverlet.runsettings /p:Exclude="[InventoryManagementAPI]InventoryManagementAPI.Migrations.*"
    ```
 
 3. **View Code Coverage Report**
@@ -97,10 +97,10 @@ The **Inventory Management API** is a RESTful web service developed using .NET 8
 - **Repository Pattern**: Abstracts data access logic, making it easier to manage and test.
 - **Dependency Injection**: Used to inject dependencies, enhancing testability and modularity.
 
-### Use of In-Memory Database
+### Use of SQLite File-Based Database
 
-- An in-memory database is used for simplicity and ease of setup. It eliminates the need for a real database server and is suitable for development and testing purposes.
-- **Assumption**: The application does not require data persistence between restarts in the development environment.
+- The application uses a file-based SQLite database for simplicity and ease of setup. This eliminates the need for a full database server while providing persistent storage across application restarts, making it suitable for development and testing purposes.
+- **Assumption**: The application does not require a high-performance or scalable database solution in the development environment, as SQLite's file-based approach provides sufficient functionality.
 
 ### Testing Frameworks
 
