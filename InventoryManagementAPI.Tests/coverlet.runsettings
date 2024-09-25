@@ -4,9 +4,8 @@
     <DataCollectors>
       <DataCollector friendlyName="XPlat Code Coverage">
         <Configuration>
-          <Format>cobertura</Format>
-			<OutputDirectory>$(TestResultsDirectory)</OutputDirectory>
-			<Include>[InventoryManagementAPI]*</Include>
+          <Format>cobertura</Format>		 
+		  <Include>[InventoryManagementAPI]*</Include>
           <Exclude>
             [*]Migrations/*  
             [*.Tests]*  

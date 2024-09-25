@@ -24,8 +24,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <Target Name="ReportCoverage" AfterTargets="Test">
-	<Exec Command="reportgenerator -reports:$(TestResultsDirectory)\**\coverage.cobertura.xml -targetdir:CoverageReport -reporttypes:Html" />
-  </Target>
-	
+	<Target Name="ReportCoverage" AfterTargets="VSTest">
+		<Exec Command="reportgenerator -reports:$(MSBuildProjectDirectory)\TestResults\**\coverage.cobertura.xml -targetdir:$(MSBuildProjectDirectory)\CoverageReport -reporttypes:Html" />
+	</Target>
+
+
 </Project>
