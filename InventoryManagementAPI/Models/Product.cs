@@ -16,6 +16,6 @@ namespace InventoryManagementAPI.Models
         public int Stock { get; set; }
 
         [Timestamp]
-        public required byte[] RowVersion { get; set; }
+        public byte[]? RowVersion { get; set; }
     }
 }

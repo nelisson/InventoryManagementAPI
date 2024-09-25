@@ -1,6 +1,6 @@
-@InventoryManagementAPI_HostAddress = http://localhost:5178
+@InventoryManagementAPI_HostAddress = http://localhost:5178/api
 
-GET {{InventoryManagementAPI_HostAddress}}/weatherforecast/
+GET {{InventoryManagementAPI_HostAddress}}/products/
 Accept: application/json
 
 ###

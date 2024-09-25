@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat Code Coverage">
+        <Configuration>
+          <Format>cobertura</Format>
+			<OutputDirectory>$(TestResultsDirectory)</OutputDirectory>
+			<Include>[InventoryManagementAPI]*</Include>
+          <Exclude>
+            [*]Migrations/*  
+            [*.Tests]*  
+            [*]*.g.cs
+          </Exclude>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>

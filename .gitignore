@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Coverlet Report folder
+[Cc]overage[Rr]eport*/

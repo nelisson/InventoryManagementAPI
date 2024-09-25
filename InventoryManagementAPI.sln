@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagementAPI", "InventoryManagementAPI\InventoryManagementAPI.csproj", "{BCC95CE1-F086-40ED-BF6B-F33FA9EDDB5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{E7A1BCDD-F378-4A85-B734-ACADBA64022B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryManagementAPI.Tests", "InventoryManagementAPI.Tests\InventoryManagementAPI.Tests.csproj", "{E7A1BCDD-F378-4A85-B734-ACADBA64022B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

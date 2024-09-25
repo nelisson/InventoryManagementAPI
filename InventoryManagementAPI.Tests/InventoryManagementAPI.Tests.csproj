@@ -17,7 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InventoryManagementAPI\InventoryManagementAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <Target Name="ReportCoverage" AfterTargets="Test">
+	<Exec Command="reportgenerator -reports:$(TestResultsDirectory)\**\coverage.cobertura.xml -targetdir:CoverageReport -reporttypes:Html" />
+  </Target>
+	
 </Project>
