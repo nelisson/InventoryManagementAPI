@@ -233,39 +233,35 @@ namespace InventoryManagementAPI.Tests
             // Arrange
             var product = await _context.Products.FirstAsync();
 
-            // Simula outro contexto que obtém o mesmo produto
             var externalContext = new InventoryContext(_contextOptions);
-    
             var externalProduct = await externalContext.Products.FindAsync(product.Id);
 
-            // Aguarda um momento para garantir que o valor de UpdatedAt seja diferente após a atualização
             await Task.Delay(1000);
 
-            // O produto no contexto principal será atualizado primeiro
             product.Name = "Updated by First Context";
-            await _repository.UpdateAsync(product);  // Primeira atualização bem-sucedida
+            await _repository.UpdateAsync(product); 
 
-            // Act: Tentativa de atualizar o produto no outro contexto (deve falhar)
+            // Act
             externalProduct.Name = "Updated by Second Context";
 
-            // Assert: Esperamos uma exceção de concorrência
+            // Assert
             Func<Task> act = async () => {
                 externalContext.Products.Update(externalProduct);
-                await externalContext.SaveChangesAsync();  // Isso deve gerar um erro de concorrência
+                await externalContext.SaveChangesAsync();
             };
 
-            await act.Should().ThrowAsync<DbUpdateConcurrencyException>();  // Confirma que a exceção foi lançada
+            await act.Should().ThrowAsync<DbUpdateConcurrencyException>();
         }
 
 
 
         public void Dispose()
         {
-            _context.Database.CloseConnection();  // Fecha a conexão do banco de dados
-            _context.Dispose();  // Libera os recursos do contexto
+            _context.Database.CloseConnection(); 
+            _context.Dispose();  
             if (System.IO.File.Exists(_databaseName))
             {
-                System.IO.File.Delete(_databaseName);  // Deleta o arquivo do banco de dados
+                System.IO.File.Delete(_databaseName);  
             }
         }
     }
