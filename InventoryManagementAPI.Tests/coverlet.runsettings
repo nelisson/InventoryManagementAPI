@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <RunSettings>
 	<DataCollectionRunSettings>
 		<DataCollectors>
-			<DataCollector friendlyName="XPlat Code Coverage">
+			<DataCollector friendlyName="XPlat code coverage">
 				<Configuration>
-					<Format>cobertura</Format>
-					<Include>[InventoryManagementAPI]*</Include>
+					<Format>opencover</Format>
 					<Exclude>
-						[*.Tests]*
-						[*]*.g.cs
+						[InventoryManagementAPI]InventoryManagementAPI.Migrations.*
+						[InventoryManagementAPI]InventoryManagementAPI.Migrations/*
 					</Exclude>
+					<Include>[InventoryManagementAPI]</Include>
+					<ExcludeByFile>**/Migrations/*.*</ExcludeByFile>
 				</Configuration>
 			</DataCollector>
 		</DataCollectors>

@@ -33,7 +33,7 @@
   </ItemGroup>
 
 	<Target Name="ReportCoverage" AfterTargets="VSTest">
-		<Exec Command="reportgenerator -reports:$(MSBuildProjectDirectory)\TestResults\**\coverage.cobertura.xml -targetdir:$(MSBuildProjectDirectory)\CoverageReport -reporttypes:Html" />
+		<Exec Command="reportgenerator -reports:$(MSBuildProjectDirectory)\TestResults\**\coverage.opencover.xml -targetdir:$(MSBuildProjectDirectory)\CoverageReport -reporttypes:Html" />
 	</Target>
 
 

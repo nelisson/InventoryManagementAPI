@@ -71,7 +71,7 @@ The **Inventory Management API** is a RESTful web service developed using .NET 8
 2. **Run Tests with Code Coverage**
 
    ```bash
-   dotnet test --settings coverlet.runsettings /p:Exclude="[InventoryManagementAPI]InventoryManagementAPI.Migrations.*"
+   dotnet test --collect:"XPlat Code Coverage" --settings coverlet.runsettings
    ```
 
 3. **View Code Coverage Report**
