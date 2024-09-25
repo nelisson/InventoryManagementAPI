@@ -121,7 +121,7 @@ The **Inventory Management API** is a RESTful web service developed using .NET 8
 
 - The API is intended for development and testing purposes.
 - Security and authentication mechanisms are not implemented as they were not specified in the requirements.
-- Concurrency is handled optimistically using row versioning with a `[Timestamp]` attribute in the model.
+- Concurrency is handled optimistically using Concurrency Check in a DateTime field.
 
 ---
 
